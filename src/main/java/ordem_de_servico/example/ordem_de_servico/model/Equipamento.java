@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table (name = "equipamento")
+@Table (name = "equipamentos")
 @Data
 public class Equipamento {
 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "ordem_servico")
+@Table(name = "ordem_servicos")
 @Data
 public class OrdemServico {
 
