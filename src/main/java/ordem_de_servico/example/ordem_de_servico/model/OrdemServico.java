@@ -16,26 +16,63 @@ public class OrdemServico {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Enumerated(EnumType.STRING)
-    private StatusOrdemServico statusOrdemServico;
-
-    private LocalDateTime dataAbertura;
-
-    private LocalDateTime dataFechamento;
-
     private String descricao;
 
-    @ManyToOne
+    private String tipo;
+
+    private String marca;
+
+    private StatusOrdemServico statusOrdemServico;
+
+    @OneToOne
     @JoinColumn(name = "cliente_id", nullable = false)
-    private Cliente cliente_id;
+    private Cliente cliente;
 
-    @ManyToMany
-    @JoinTable(
-            name = "ordem_servico_equipamento",
-            joinColumns = @JoinColumn(name = "ordem_servico_id"),
-            inverseJoinColumns = @JoinColumn(name = "equipamento_id")
-    )
+    public Cliente getCliente() {
+        return cliente;
+    }
 
-    private List<Equipamento> equipamentos;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public StatusOrdemServico getStatusOrdemServico() {
+        return statusOrdemServico;
+    }
+
+    public void setStatusOrdemServico(StatusOrdemServico statusOrdemServico) {
+        this.statusOrdemServico = statusOrdemServico;
+    }
 }
