@@ -5,7 +5,6 @@ import ordem_de_servico.example.ordem_de_servico.model.Cliente;
 import ordem_de_servico.example.ordem_de_servico.model.OrdemServico;
 import ordem_de_servico.example.ordem_de_servico.repository.ClienteRepository;
 import ordem_de_servico.example.ordem_de_servico.repository.OrdemServicoRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +36,4 @@ public class CriarOrdemServico {
 
         return ordemServicoRepository.save(ordemServico);
     }
-
-
 }

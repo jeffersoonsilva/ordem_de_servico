@@ -4,20 +4,24 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
+import ordem_de_servico.example.ordem_de_servico.dto.AtualizarTelefoneDto;
 import ordem_de_servico.example.ordem_de_servico.dto.ClienteDto;
 import ordem_de_servico.example.ordem_de_servico.model.Cliente;
+import ordem_de_servico.example.ordem_de_servico.model.OrdemServico;
+import ordem_de_servico.example.ordem_de_servico.repository.ClienteRepository;
+import ordem_de_servico.example.ordem_de_servico.repository.OrdemServicoRepository;
 import ordem_de_servico.example.ordem_de_servico.service.CriarClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 public class ClienteController {
-
 
     @Autowired
     private CriarClienteService criarClienteService;
